@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorkSphere HRMS</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<section id="login" class="login hidden">
+  <div class="login-brand">
+    <div class="rings" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h1>WorkSphere</h1>
+    <p>Shifts, leave, documents, performance and insights in one place.</p>
+  </div>
+  <form id="login-form" class="login-form" autocomplete="on">
+    <h2>Sign in</h2>
+    <label>Email or username<input name="email" type="text" required autocomplete="username"></label>
+    <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
+    <button class="btn primary wide">Sign in</button>
+    <p id="login-err" class="err"></p>
+    <div class="demo">
+      <span>Demo accounts</span>
+      <button type="button" data-u="admin@worksphere.com" data-p="Admin@123">Admin</button>
+      <button type="button" data-u="hr@worksphere.com" data-p="Hr@12345">HR</button>
+      <button type="button" data-u="manager@worksphere.com" data-p="Manager@123">Manager</button>
+      <button type="button" data-u="kabir@worksphere.com" data-p="Employee@123">Employee</button>
+    </div>
+    <p class="muted sm">New employee? <a href="#" id="reg">Create an account</a></p>
+  </form>
+</section>
+
+<div id="app" class="app hidden">
+  <aside id="side" class="side">
+    <div class="brand"><span class="logo"></span>WorkSphere</div>
+    <nav id="nav"></nav>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <button id="burger" class="icon-btn" aria-label="Menu">&#9776;</button>
+      <h2 id="page-title"></h2>
+      <div class="top-right">
+        <a id="bell" class="bell" href="#/notifications" aria-label="Alerts">&#128276;<b id="badge" class="badge hidden">0</b></a>
+        <div class="who"><strong id="who-name"></strong><small id="who-role"></small></div>
+        <button id="logout" class="btn ghost sm">Sign out</button>
+      </div>
+    </header>
+    <main id="view" class="view"></main>
+  </div>
+</div>
+<div id="toasts" aria-live="polite"></div>
+<dialog id="modal"></dialog>
+<script src="/core.js"></script>
+<script src="/pages.js"></script>
+<script src="/pages2.js"></script>
+<script>boot();</script>
+</body>
+</html>
